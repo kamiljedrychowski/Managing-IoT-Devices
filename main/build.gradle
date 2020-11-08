@@ -1,0 +1,4 @@
+subprojects {
+    jar { enabled = false }
+    bootJar { enabled = true }
+}

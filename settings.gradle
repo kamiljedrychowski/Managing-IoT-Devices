@@ -1,0 +1,16 @@
+rootProject.name = 'iot'
+
+include 'main'
+include 'main:device-status'
+findProject(':main:device-status')?.name = 'device-status'
+
+
+include 'domain'
+include 'domain:domain-device-status'
+findProject(':domain:domain-device-status')?.name = 'domain-device-status'
+
+
+include 'service'
+include 'service:service-device-status'
+findProject(':service:service-device-status')?.name = 'service-device-status'
+

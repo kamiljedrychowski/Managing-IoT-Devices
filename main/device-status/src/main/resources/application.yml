@@ -1,0 +1,27 @@
+server:
+  port: 9993
+
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  data:
+    mongodb:
+      database: admin
+      username: root
+      password: example
+      port: 27777
+      host: localhost
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+        bindings:
+          device-status-sink-stream:
+            group: group-1
+            destination: device_status
+            contentType: application/json
+
+logging:
+  level:
+    com.iot.device_status: DEBUG
