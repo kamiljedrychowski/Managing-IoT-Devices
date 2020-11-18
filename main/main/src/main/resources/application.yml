@@ -1,0 +1,15 @@
+server:
+  port: 9997
+
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5421/postgres
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver

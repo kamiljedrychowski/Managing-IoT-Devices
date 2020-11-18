@@ -32,6 +32,13 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - 5421:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
 
 volumes:
   zookeeper_data:

@@ -18,11 +18,6 @@ public class ExampleController {
         this.deviceStatusService = deviceStatusService;
     }
 
-    @PostMapping("/send/")
-    public void sendExample() {
-        deviceStatusService.addNewExample();
-    }
-
     @GetMapping("/get")
     public List<DeviceStatus> getExample() {
         return deviceStatusService.getAllExample();

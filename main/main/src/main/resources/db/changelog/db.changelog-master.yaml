@@ -1,0 +1,194 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20201118-1500
+      author: kamil_jedrychowski
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_device_id
+                  name: device_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: device_uuid
+                  type: VARCHAR(64)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: device_type
+                  type: VARCHAR(250)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: device_name
+                  type: VARCHAR(250)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: device_status
+                  type: VARCHAR(250)
+              - column:
+                  constraints:
+                    nullable: true
+                  name: device_battery
+                  type: NUMERIC
+              - column:
+                  constraints:
+                    nullable: true
+                  name: device_status_information
+                  type: NUMERIC
+              - column:
+                  constraints:
+                    nullable: false
+                  name: device_main_owner
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: device_creation_time
+                  type: TIMESTAMP
+            tableName: device
+
+  - changeSet:
+      id: 20201118-1512
+      author: kamil_jedrychowski
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_user_id
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: user_name
+                  type: VARCHAR(250)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: user_username
+                  type: VARCHAR(250)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: user_password
+                  type: VARCHAR(250)
+              - column:
+                  constraints:
+                    nullable: true
+                  name: user_creation_time
+                  type: TIMESTAMP
+            tableName: user
+  - changeSet:
+      id: 20201118-1520
+      author: kamil_jedrychowski
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_role_id
+                  name: role_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: role_name
+                  type: VARCHAR(250)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: role_creation_time
+                  type: TIMESTAMP
+            tableName: role
+  - changeSet:
+      id: 20201118-1527
+      author: kamil_jedrychowski
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_user_role_id
+                  name: user_role_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: role_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: user_role_creation_time
+                  type: TIMESTAMP
+            tableName: user_role
+  - changeSet:
+      id: 20201118-1530
+      author: kamil_jedrychowski
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_detail_id
+                  name: detail_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: device_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: true
+                  name: country
+                  type: VARCHAR(250)
+              - column:
+                  constraints:
+                    nullable: true
+                  name: city
+                  type: VARCHAR(250)
+              - column:
+                  constraints:
+                    nullable: true
+                  name: address
+                  type: VARCHAR(250)
+              - column:
+                  constraints:
+                    nullable: true
+                  name: brand
+                  type: VARCHAR(250)
+              - column:
+                  constraints:
+                    nullable: true
+                  name: model
+                  type: VARCHAR(250)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: device_detail_creation_time
+                  type: TIMESTAMP
+            tableName: device_detail
+
+
