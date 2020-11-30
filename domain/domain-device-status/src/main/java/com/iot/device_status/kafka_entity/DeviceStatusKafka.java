@@ -1,4 +1,4 @@
-package com.iot.device_status;
+package com.iot.device_status.kafka_entity;
 
 import com.iot.device_status.enums.StatusType;
 import lombok.Builder;

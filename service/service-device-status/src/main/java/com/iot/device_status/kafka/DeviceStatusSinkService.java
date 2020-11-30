@@ -1,6 +1,6 @@
 package com.iot.device_status.kafka;
 
-import com.iot.device_status.DeviceStatusKafka;
+import com.iot.device_status.kafka_entity.DeviceStatusKafka;
 import com.iot.device_status.entity.DeviceStatus;
 import com.iot.device_status.entity.StatusData;
 import com.iot.device_status.repository.DeviceStatusRepository;

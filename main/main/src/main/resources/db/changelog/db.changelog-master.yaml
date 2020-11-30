@@ -1,5 +1,16 @@
 databaseChangeLog:
   - changeSet:
+      id: 20201122-2000
+      author: kamil_jedrychowski
+      comment: sequence for ids in all tables
+      changes:
+        - createSequence:
+            cycle: true
+            incrementBy: 1
+            minValue: 1
+            sequenceName: hibernate_sequence
+            startValue: 1
+  - changeSet:
       id: 20201118-1500
       author: kamil_jedrychowski
       changes:
@@ -10,6 +21,8 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                     primaryKeyName: pk_device_id
+                    unique: true
+                  defaultValueSequenceNext: hibernate_sequence
                   name: device_id
                   type: BIGINT
               - column:
@@ -22,6 +35,11 @@ databaseChangeLog:
                     nullable: false
                   name: device_type
                   type: VARCHAR(250)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: device_detail
+                  type: BIGINT
               - column:
                   constraints:
                     nullable: false
@@ -65,6 +83,8 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                     primaryKeyName: pk_user_id
+                    unique: true
+                  defaultValueSequenceNext: hibernate_sequence
                   name: user_id
                   type: BIGINT
               - column:
@@ -99,6 +119,8 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                     primaryKeyName: pk_role_id
+                    unique: true
+                  defaultValueSequenceNext: hibernate_sequence
                   name: role_id
                   type: BIGINT
               - column:
@@ -123,6 +145,8 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                     primaryKeyName: pk_user_role_id
+                    unique: true
+                  defaultValueSequenceNext: hibernate_sequence
                   name: user_role_id
                   type: BIGINT
               - column:
@@ -152,37 +176,34 @@ databaseChangeLog:
                     nullable: false
                     primaryKey: true
                     primaryKeyName: pk_detail_id
+                    unique: true
+                  defaultValueSequenceNext: hibernate_sequence
                   name: detail_id
                   type: BIGINT
               - column:
                   constraints:
-                    nullable: false
-                  name: device_id
-                  type: BIGINT
-              - column:
-                  constraints:
                     nullable: true
-                  name: country
+                  name: device_country
                   type: VARCHAR(250)
               - column:
                   constraints:
                     nullable: true
-                  name: city
+                  name: device_city
                   type: VARCHAR(250)
               - column:
                   constraints:
                     nullable: true
-                  name: address
+                  name: device_address
                   type: VARCHAR(250)
               - column:
                   constraints:
                     nullable: true
-                  name: brand
+                  name: device_brand
                   type: VARCHAR(250)
               - column:
                   constraints:
                     nullable: true
-                  name: model
+                  name: device_model
                   type: VARCHAR(250)
               - column:
                   constraints:
@@ -190,5 +211,53 @@ databaseChangeLog:
                   name: device_detail_creation_time
                   type: TIMESTAMP
             tableName: device_detail
-
+  - changeSet:
+      id: 20201128-1530
+      author: kamil_jedrychowski
+      changes:
+        - insert:
+            tableName: role
+            columns:
+              - column:
+                  name: role_id
+                  type: BIGINT
+                  value: 1
+              - column:
+                  name: role_name
+                  type: VARCHAR(255)
+                  value: "superadmin"
+              - column:
+                  name: role_creation_time
+                  type: TIMESTAMP
+                  value: now()
+        - insert:
+            tableName: role
+            columns:
+              - column:
+                  name: role_id
+                  type: BIGINT
+                  value: 2
+              - column:
+                  name: role_name
+                  type: VARCHAR(255)
+                  value: "admin"
+              - column:
+                  name: role_creation_time
+                  type: TIMESTAMP
+                  value: now()
+        - insert:
+            tableName: role
+            columns:
+              - column:
+                  name: role_id
+                  type: BIGINT
+                  value: 3
+              - column:
+                  name: role_name
+                  type: VARCHAR(255)
+                  value: "user"
+              - column:
+                  name: role_creation_time
+                  type: TIMESTAMP
+                  value: now()
 

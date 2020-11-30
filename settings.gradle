@@ -7,6 +7,8 @@ include 'main:device-status'
 findProject(':main:device-status')?.name = 'device-status'
 include 'main:device'
 findProject(':main:device')?.name = 'device'
+include 'main:user'
+findProject(':main:user')?.name = 'user'
 
 
 include 'domain'
@@ -14,6 +16,8 @@ include 'domain:domain-device-status'
 findProject(':domain:domain-device-status')?.name = 'domain-device-status'
 include 'domain:domain-device'
 findProject(':domain:domain-device')?.name = 'domain-device'
+include 'domain:domain-user'
+findProject(':domain:domain-user')?.name = 'domain-user'
 
 
 include 'service'
@@ -21,4 +25,5 @@ include 'service:service-device-status'
 findProject(':service:service-device-status')?.name = 'service-device-status'
 include 'service:service-device'
 findProject(':service:service-device')?.name = 'service-device'
-
+include 'service:service-user'
+findProject(':service:service-user')?.name = 'service-user'
