@@ -1,5 +1,5 @@
 server:
-  port: 9991
+  port: 9990
 
 spring:
   jpa:
@@ -20,5 +20,6 @@ spring:
           brokers: localhost:9092
         bindings:
           base-device-events-stream:
+            group: group-2
             destination: base_device_events
             contentType: application/json

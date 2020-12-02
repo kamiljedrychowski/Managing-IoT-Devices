@@ -25,10 +25,10 @@ public class DeviceCommandSinkService {
     @StreamListener(BaseDeviceEventSinkStream.BASE_DEVICE_EVENTS_STREAM)
     public void handleDeviceCommand(@Payload DeviceEvent deviceEvent) {
         log.debug("Received message: {}", deviceEvent);
-        if (!checkData(deviceEvent)) {
+//        if (!checkData(deviceEvent)) {
             log.error("Received message is incorrect: {}", deviceEvent);
-            return;
-        }
+//            return;
+//        }
 
         processData(deviceEvent);
     }

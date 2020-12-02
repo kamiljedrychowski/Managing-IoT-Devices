@@ -1,7 +1,7 @@
 package com.iot.device.kafka;
 
 import com.iot.device.kafka.entity.DeviceEvent;
-import com.iot.device.kafka.stream.BaseDeviceEventsStram;
+import com.iot.device.kafka.stream.BaseDeviceEventsStream;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.MessageHeaders;
@@ -13,9 +13,9 @@ import org.springframework.util.MimeTypeUtils;
 @Slf4j
 public class BaseDeviceEventProducer {
 
-    private final BaseDeviceEventsStram stream;
+    private final BaseDeviceEventsStream stream;
 
-    public BaseDeviceEventProducer(BaseDeviceEventsStram stream) {
+    public BaseDeviceEventProducer(BaseDeviceEventsStream stream) {
         this.stream = stream;
     }
 
