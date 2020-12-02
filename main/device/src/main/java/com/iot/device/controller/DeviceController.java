@@ -2,6 +2,7 @@ package com.iot.device.controller;
 
 import com.iot.device.DeviceService;
 import com.iot.device.dto.DeviceDto;
+import com.iot.device.kafka.entity.DeviceEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -34,5 +35,10 @@ public class DeviceController {
     @GetMapping("/device/get")
     public ResponseEntity<String> getDevices() {
         return deviceService.getDevices();
+    }
+
+    @PostMapping("device/event")
+    public ResponseEntity createDeviceEvent(@RequestBody DeviceEvent deviceEvent) {
+        return deviceService.createDeviceEvent(deviceEvent);
     }
 }
