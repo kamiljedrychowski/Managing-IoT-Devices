@@ -17,11 +17,11 @@ spring:
         binder:
           brokers: localhost:9092
         bindings:
-          device-status-sink-stream:
+          base-device-events-stream:
             group: group-1
-            destination: device_status
+            destination: base_device_events
             contentType: application/json
 
-logging:
-  level:
-    com.iot.device_status: DEBUG
+#logging:
+#  level:
+#    com.iot.device_status: DEBUG

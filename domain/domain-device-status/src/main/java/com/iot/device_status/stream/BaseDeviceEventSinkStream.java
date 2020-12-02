@@ -3,9 +3,9 @@ package com.iot.device_status.stream;
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.messaging.MessageChannel;
 
-public interface DeviceStatusSinkStream {
-    String DEVICE_STATUS_SINK_STREAM = "device-status-sink-stream";
+public interface BaseDeviceEventSinkStream {
+    String BASE_DEVICE_EVENTS_STREAM = "base-device-events-stream";
 
-    @Input(DEVICE_STATUS_SINK_STREAM)
+    @Input(BASE_DEVICE_EVENTS_STREAM)
     MessageChannel outputStream();
 }

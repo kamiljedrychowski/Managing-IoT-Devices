@@ -1,6 +1,5 @@
 package com.iot.device.kafka.entity;
 
-import lombok.Builder;
 import lombok.Data;
 
 @Data
