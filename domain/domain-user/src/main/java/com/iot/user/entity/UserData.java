@@ -1,7 +1,9 @@
 package com.iot.user.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -10,20 +12,23 @@ import java.time.LocalDateTime;
 @Entity
 @Builder
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserData {
 
     @Id
     @GeneratedValue
     @Column(name = "user_id")
-    Long userId;
+    private Long userId;
     @Column(name = "user_name")
-    String userName;
+    private String userName;
     @Column(name = "user_username")
-    String userUsername;
+    private String userUsername;
     @Column(name = "user_password")
-    String userPassword;
+    private String userPassword;
     @Column(name = "user_creation_time")
-    LocalDateTime userCreationTime;
+    private LocalDateTime userCreationTime;
+
 
 }
 

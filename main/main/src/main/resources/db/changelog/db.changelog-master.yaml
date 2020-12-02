@@ -107,7 +107,7 @@ databaseChangeLog:
                     nullable: true
                   name: user_creation_time
                   type: TIMESTAMP
-            tableName: user
+            tableName: user_data
   - changeSet:
       id: 20201118-1520
       author: kamil_jedrychowski

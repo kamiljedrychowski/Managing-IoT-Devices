@@ -7,5 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRoleRepository extends CrudRepository<UserRole, Long> {
-    public UserRole getByUserData(UserData userData);
+
+    UserRole getUserRoleByUserData(UserData userData);
+
 }

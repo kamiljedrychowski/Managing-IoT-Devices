@@ -1,5 +1,6 @@
 package com.iot.user.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,16 +11,18 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "ROLE")
 @Data
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Role {
 
     @Id
     @GeneratedValue
     @Column(name = "role_id")
-    Long roleId;
+    private Long roleId;
     @Column(name = "role_name")
-    String roleName;
+    private String roleName;
     @Column(name = "role_creation_time")
-    LocalDateTime roleCreationTime;
+    private LocalDateTime roleCreationTime;
 
 }
