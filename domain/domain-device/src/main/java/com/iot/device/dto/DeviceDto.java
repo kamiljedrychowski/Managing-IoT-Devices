@@ -15,4 +15,7 @@ public class DeviceDto {
     private String deviceAddress;
     private String deviceBrand;
     private String deviceModel;
+
+    //Owner login
+    private String ownerLogin;
 }

@@ -32,4 +32,9 @@ public class DeviceDetailService {
         deviceDetailRepository.save(deviceDetail);
         return deviceDetail;
     }
+
+    public void deleteDeviceDetailById(Long id) {
+        deviceDetailRepository.deleteById(id);
+    }
+
 }

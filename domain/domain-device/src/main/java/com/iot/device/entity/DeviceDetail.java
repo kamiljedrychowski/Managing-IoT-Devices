@@ -1,7 +1,9 @@
 package com.iot.device.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -10,6 +12,8 @@ import java.time.LocalDateTime;
 @Table(name = "DEVICE_DETAIL")
 @Entity
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class DeviceDetail {
 
     @Id
