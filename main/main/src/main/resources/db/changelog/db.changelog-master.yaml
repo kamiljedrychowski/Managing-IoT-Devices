@@ -73,99 +73,6 @@ databaseChangeLog:
             tableName: device
 
   - changeSet:
-      id: 20201118-1512
-      author: kamil_jedrychowski
-      changes:
-        - createTable:
-            columns:
-              - column:
-                  constraints:
-                    nullable: false
-                    primaryKey: true
-                    primaryKeyName: pk_user_id
-                    unique: true
-                  defaultValueSequenceNext: hibernate_sequence
-                  name: user_id
-                  type: BIGINT
-              - column:
-                  constraints:
-                    nullable: false
-                  name: user_name
-                  type: VARCHAR(250)
-              - column:
-                  constraints:
-                    nullable: false
-                  name: user_username
-                  type: VARCHAR(250)
-              - column:
-                  constraints:
-                    nullable: false
-                  name: user_password
-                  type: VARCHAR(250)
-              - column:
-                  constraints:
-                    nullable: true
-                  name: user_creation_time
-                  type: TIMESTAMP
-            tableName: user_data
-  - changeSet:
-      id: 20201118-1520
-      author: kamil_jedrychowski
-      changes:
-        - createTable:
-            columns:
-              - column:
-                  constraints:
-                    nullable: false
-                    primaryKey: true
-                    primaryKeyName: pk_role_id
-                    unique: true
-                  defaultValueSequenceNext: hibernate_sequence
-                  name: role_id
-                  type: BIGINT
-              - column:
-                  constraints:
-                    nullable: false
-                  name: role_name
-                  type: VARCHAR(250)
-              - column:
-                  constraints:
-                    nullable: false
-                  name: role_creation_time
-                  type: TIMESTAMP
-            tableName: role
-  - changeSet:
-      id: 20201118-1527
-      author: kamil_jedrychowski
-      changes:
-        - createTable:
-            columns:
-              - column:
-                  constraints:
-                    nullable: false
-                    primaryKey: true
-                    primaryKeyName: pk_user_role_id
-                    unique: true
-                  defaultValueSequenceNext: hibernate_sequence
-                  name: user_role_id
-                  type: BIGINT
-              - column:
-                  constraints:
-                    nullable: false
-                  name: role_id
-                  type: BIGINT
-              - column:
-                  constraints:
-                    nullable: false
-                  name: user_id
-                  type: BIGINT
-              - column:
-                  constraints:
-                    nullable: false
-                  name: user_role_creation_time
-                  type: TIMESTAMP
-            tableName: user_role
-  - changeSet:
       id: 20201118-1530
       author: kamil_jedrychowski
       changes:
@@ -216,48 +123,123 @@ databaseChangeLog:
       author: kamil_jedrychowski
       changes:
         - insert:
-            tableName: role
+            tableName: device_detail
             columns:
               - column:
-                  name: role_id
-                  type: BIGINT
-                  value: 1
+                  name: device_country
+                  type: VARCHAR(250)
+                  value: "Polska"
               - column:
-                  name: role_name
-                  type: VARCHAR(255)
-                  value: "superadmin"
+                  name: device_city
+                  type: VARCHAR(250)
+                  value: "Kraków"
               - column:
-                  name: role_creation_time
+                  name: device_address
+                  type: VARCHAR(250)
+                  value: "Tomickiego 24"
+              - column:
+                  name: device_brand
+                  type: VARCHAR(250)
+                  value: "BRAND_1"
+              - column:
+                  name: device_model
+                  type: VARCHAR(250)
+                  value: "MODEL_1"
+              - column:
+                  name: device_detail_creation_time
                   type: TIMESTAMP
                   value: now()
         - insert:
-            tableName: role
+            tableName: device_detail
             columns:
               - column:
-                  name: role_id
-                  type: BIGINT
-                  value: 2
+                  name: device_country
+                  type: VARCHAR(250)
+                  value: "Polska"
               - column:
-                  name: role_name
-                  type: VARCHAR(255)
-                  value: "admin"
+                  name: device_city
+                  type: VARCHAR(250)
+                  value: "Kraków"
               - column:
-                  name: role_creation_time
+                  name: device_address
+                  type: VARCHAR(250)
+                  value: "Warszawska 24"
+              - column:
+                  name: device_brand
+                  type: VARCHAR(250)
+                  value: "BRAND_2"
+              - column:
+                  name: device_model
+                  type: VARCHAR(250)
+                  value: "MODEL_2"
+              - column:
+                  name: device_detail_creation_time
                   type: TIMESTAMP
                   value: now()
         - insert:
-            tableName: role
+            tableName: device
             columns:
               - column:
-                  name: role_id
+                  name: device_uuid
+                  type: VARCHAR(64)
+                  value: "a2401408-e339-457d-a660-8fc3dd3304be"
+              - column:
+                  name: device_type
+                  type: VARCHAR(250)
+                  value: "AIR_CONDITIONING"
+              - column:
+                  name: device_detail
                   type: BIGINT
-                  value: 3
+                  value: 4
               - column:
-                  name: role_name
-                  type: VARCHAR(255)
-                  value: "user"
+                  name: device_name
+                  type: VARCHAR(250)
+                  value: "klimatyzacja"
               - column:
-                  name: role_creation_time
+                  name: device_status
+                  type: VARCHAR(250)
+                  value: "OFF"
+              - column:
+                  name: device_status_information
+                  type: NUMERIC
+                  value: 24
+              - column:
+                  name: device_main_owner
+                  type: BIGINT
+                  value: -1
+              - column:
+                  name: device_creation_time
                   type: TIMESTAMP
                   value: now()
 
+        - insert:
+            tableName: device
+            columns:
+              - column:
+                  name: device_uuid
+                  type: VARCHAR(64)
+                  value: "17656374-e141-4c35-8cbf-2796c95e2b9a"
+              - column:
+                  name: device_type
+                  type: VARCHAR(250)
+                  value: "LIGHTS"
+              - column:
+                  name: device_detail
+                  type: BIGINT
+                  value: 5
+              - column:
+                  name: device_name
+                  type: VARCHAR(250)
+                  value: "oświetlenie"
+              - column:
+                  name: device_status
+                  type: VARCHAR(250)
+                  value: "OFF"
+              - column:
+                  name: device_main_owner
+                  type: BIGINT
+                  value: -1
+              - column:
+                  name: device_creation_time
+                  type: TIMESTAMP
+                  value: now()

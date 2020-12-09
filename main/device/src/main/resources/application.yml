@@ -18,7 +18,7 @@ spring:
       kafka:
         binder:
           brokers: localhost:9092
-        bindings:
-          base-device-events-stream:
-            destination: base_device_events
-            contentType: application/json
+      bindings:
+        base-device-events-stream:
+          destination: device_events
+          contentType: application/json
