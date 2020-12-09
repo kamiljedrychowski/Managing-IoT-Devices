@@ -1,4 +1,5 @@
 dependencies {
     compile project(":domain:domain-device-mockup")
+    compile project(":domain:domain-device-status")
 
 }

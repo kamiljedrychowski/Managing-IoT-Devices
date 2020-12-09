@@ -95,6 +95,6 @@ public class DeviceService {
         //sending message to KAFKA
         baseDeviceEventProducer.sendBaseDeviceEvent(deviceEvent);
 
-         return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

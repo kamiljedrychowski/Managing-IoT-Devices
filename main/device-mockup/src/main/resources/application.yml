@@ -1,5 +1,5 @@
 server:
-  port: 9990
+  port: 9992
 
 spring:
   jpa:
@@ -13,13 +13,27 @@ spring:
     username: postgres
     password: postgres
     driverClassName: org.postgresql.Driver
+  data:
+    mongodb:
+      database: admin
+      username: root
+      password: example
+      port: 27777
+      host: localhost
   cloud:
     stream:
+      defaultBinder : kafka
       kafka:
         binder:
           brokers: localhost:9092
-        bindings:
-          base-device-events-stream:
-            group: group-2
-            destination: base_device_events
-            contentType: application/json
+        streams:
+          binder:
+            brokers: localhost:9092
+      bindings:
+        base-device-events-stream-input:
+          group: group-2
+          destination: device_events
+          contentType: application/json
+        device-status-stream-output:
+          destination: device_status
+          contentType: application/json

@@ -24,14 +24,14 @@ public class DeviceStatusSinkService {
         this.deviceStatusRepository = deviceStatusRepository;
     }
 
-//    @StreamListener(BaseDeviceEventSinkStream.BASE_DEVICE_EVENTS_STREAM)
-//    public void handleGreetings(@Payload DeviceStatusKafka deviceStatusKafka) {
-//        log.debug("Received message: {}", deviceStatusKafka);
-//        if(!checkData(deviceStatusKafka)) {
-//            return;
-//        }
-//        processData(deviceStatusKafka);
-//    }
+    @StreamListener(BaseDeviceEventSinkStream.BASE_DEVICE_EVENTS_STREAM)
+    public void handleGreetings(@Payload DeviceStatusKafka deviceStatusKafka) {
+        log.debug("Received message: {}", deviceStatusKafka);
+        if(!checkData(deviceStatusKafka)) {
+            return;
+        }
+        processData(deviceStatusKafka);
+    }
 
     private boolean checkData(DeviceStatusKafka deviceStatusKafka) {
         return deviceStatusKafka.getDeviceUuid() != null && deviceStatusKafka.getStatusType() != null;
