@@ -1,6 +1,5 @@
 package com.iot.device_status;
 
-import com.iot.device_status.entity.DeviceStatus;
 import com.iot.device_status.repository.DeviceStatusRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +17,5 @@ public class DeviceStatusService {
     public DeviceStatusService(DeviceStatusRepository deviceStatusRepository) {
         this.deviceStatusRepository = deviceStatusRepository;
     }
-
-    public List<DeviceStatus> getAllExample() {
-        return deviceStatusRepository.findAll();
-    }
-
 
 }

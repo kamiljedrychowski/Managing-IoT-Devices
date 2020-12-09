@@ -1,5 +1,0 @@
-dependencies {
-    compile project(":domain:domain-user")
-    implementation 'org.springframework.boot:spring-boot-starter-security'
-}
-

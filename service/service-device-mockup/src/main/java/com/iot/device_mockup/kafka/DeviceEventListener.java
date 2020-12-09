@@ -5,11 +5,9 @@ import com.iot.device_mockup.kafka.stream.MockDeviceStream;
 import com.iot.device_status.enums.StatusType;
 import com.iot.device_status.kafka_entity.DeviceStatusKafka;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.messaging.handler.annotation.Payload;
-import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

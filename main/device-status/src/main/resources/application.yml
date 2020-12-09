@@ -16,11 +16,11 @@ spring:
       kafka:
         binder:
           brokers: localhost:9092
-        bindings:
-          base-device-events-stream:
-            group: group-1
-            destination: base_device_events
-            contentType: application/json
+      bindings:
+        device-events-history-input-stream:
+          group: group-history
+          destination: device_events
+          contentType: application/json
 
 #logging:
 #  level:

@@ -14,5 +14,5 @@ public class StatusData {
     private String deviceUuid;
     private StatusType statusType;
     private Double statusData;
-    private String additionalData;
+    private Double additionalData;
 }

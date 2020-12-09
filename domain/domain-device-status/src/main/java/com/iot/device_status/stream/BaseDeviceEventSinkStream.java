@@ -4,8 +4,8 @@ import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.messaging.MessageChannel;
 
 public interface BaseDeviceEventSinkStream {
-    String BASE_DEVICE_EVENTS_STREAM = "base-device-events-stream";
+    String BASE_DEVICE_EVENTS_STREAM = "device-events-history-input-stream";
 
     @Input(BASE_DEVICE_EVENTS_STREAM)
-    MessageChannel outputStream();
+    MessageChannel inputStream();
 }
