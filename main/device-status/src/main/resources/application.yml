@@ -21,6 +21,10 @@ spring:
           group: group-history
           destination: device_events
           contentType: application/json
+        device-status-history-input-stream:
+          group: group-history
+          destination: device-status
+          contentType: application/json
 
 #logging:
 #  level:
