@@ -1,0 +1,29 @@
+server:
+  port: 9999
+
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5421/postgres
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+  cloud:
+    stream:
+      defaultBinder : kafka
+      kafka:
+        binder:
+          brokers: localhost:9092
+        streams:
+          binder:
+            brokers: localhost:9092
+      bindings:
+        device-events-stream:
+          group: device01
+          destination: device_events
+          contentType: application/json

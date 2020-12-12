@@ -1,8 +1,6 @@
 package com.iot.device_status.kafka;
 
-import com.iot.device.kafka.entity.DeviceEvent;
-import com.iot.device.kafka.enums.DeviceEvents;
-import com.iot.device_status.DeviceService;
+import com.iot.device_event.entity.DeviceEvent;
 import com.iot.device_status.entity.DeviceCommand;
 import com.iot.device_status.repository.DeviceCommandRepository;
 import com.iot.device_status.stream.BaseDeviceEventSinkStream;
@@ -18,11 +16,9 @@ import java.time.LocalDateTime;
 public class DeviceCommandSinkService {
 
     private final DeviceCommandRepository deviceCommandRepository;
-    private final DeviceService deviceService;
 
-    public DeviceCommandSinkService(DeviceCommandRepository deviceCommandRepository, DeviceService deviceService) {
+    public DeviceCommandSinkService(DeviceCommandRepository deviceCommandRepository) {
         this.deviceCommandRepository = deviceCommandRepository;
-        this.deviceService = deviceService;
     }
 
     @StreamListener(BaseDeviceEventSinkStream.BASE_DEVICE_EVENTS_STREAM)
@@ -43,7 +39,6 @@ public class DeviceCommandSinkService {
     private void processData(DeviceEvent deviceEvent) {
         DeviceCommand deviceCommand = createDeviceCommand(deviceEvent);
         deviceCommandRepository.save(deviceCommand);
-        chandeDeviceStatus(deviceEvent);
         log.debug("Saving device event data into database: {}", deviceCommand);
     }
 
@@ -54,14 +49,5 @@ public class DeviceCommandSinkService {
                 .additionalData(deviceEvent.getAdditionalData())
                 .commandTime(LocalDateTime.now())
                 .build();
-    }
-
-    private void chandeDeviceStatus(DeviceEvent deviceEvent) {
-        if (deviceEvent.getDeviceEvent().equals(DeviceEvents.TURN_OFF_DEVICE.toString())
-        || deviceEvent.getDeviceEvent().equals(DeviceEvents.TURN_ON_DEVICE.toString())) {
-            deviceService.turnOnOff(deviceEvent);
-        } else if (deviceEvent.getDeviceEvent().equals(DeviceEvents.CHANGE_TEMPERATURE.toString())) {
-            deviceService.changeTemperature(deviceEvent);
-        }
     }
 }

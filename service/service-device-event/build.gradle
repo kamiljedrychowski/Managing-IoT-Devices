@@ -1,0 +1,5 @@
+dependencies {
+    compile project(":domain:domain-device-event")
+    compile project(":domain:domain-device")
+
+}

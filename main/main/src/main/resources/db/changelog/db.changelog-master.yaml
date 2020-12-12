@@ -190,7 +190,7 @@ databaseChangeLog:
               - column:
                   name: device_detail
                   type: BIGINT
-                  value: 4
+                  value: 1
               - column:
                   name: device_name
                   type: VARCHAR(250)
@@ -226,7 +226,7 @@ databaseChangeLog:
               - column:
                   name: device_detail
                   type: BIGINT
-                  value: 5
+                  value: 2
               - column:
                   name: device_name
                   type: VARCHAR(250)

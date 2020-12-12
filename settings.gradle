@@ -9,6 +9,8 @@ include 'main:device'
 findProject(':main:device')?.name = 'device'
 include 'main:device-mockup'
 findProject(':main:device-mockup')?.name = 'device-mockup'
+include 'main:device-event'
+findProject(':main:device-event')?.name = 'device-event'
 
 
 include 'domain'
@@ -18,6 +20,8 @@ include 'domain:domain-device'
 findProject(':domain:domain-device')?.name = 'domain-device'
 include 'domain:domain-device-mockup'
 findProject(':domain:domain-device-mockup')?.name = 'domain-device-mockup'
+include 'domain:domain-device-event'
+findProject(':domain:domain-device-event')?.name = 'domain-device-event'
 
 
 include 'service'
@@ -27,3 +31,5 @@ include 'service:service-device'
 findProject(':service:service-device')?.name = 'service-device'
 include 'service:service-device-mockup'
 findProject(':service:service-device-mockup')?.name = 'service-device-mockup'
+include 'service:service-device-event'
+findProject(':service:service-device-event')?.name = 'service-device-event'
